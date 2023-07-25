@@ -33,5 +33,5 @@ jobs:
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:
-        name: cloudspout-button-panel.zip
-        path: cloudspout-button-panel.zip
+        name: button-kyklos-digro.zip
+        path: button-kyklos-digro.zip
