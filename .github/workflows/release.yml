@@ -33,5 +33,5 @@ jobs:
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:
-        name: button-kyklos-digro.zip
-        path: button-kyklos-digro.zip
+        name: frankroos-button-kyklos.zip
+        path: frankroos-button-kyklos.zip
