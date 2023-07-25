@@ -5,9 +5,9 @@ Hash: SHA512
 {
   "manifestVersion": "2.0.0",
   "signatureType": "community",
-  "signedByOrg": "cloudspout",
+  "signedByOrg": "FrankRoos",
   "signedByOrgName": "CloudSpout LLC",
-  "plugin": "cloudspout-button-panel",
+  "plugin": "frankroos-button-kyklos",
   "version": "7.0.25",
   "time": 1613865517064,
   "keyId": "7e4d0c6a708866e7",
