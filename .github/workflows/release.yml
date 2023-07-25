@@ -24,12 +24,12 @@ jobs:
     - run: npm install
     - run: npx @grafana/sign-plugin@1.0.3
       env:
-        GRAFANA_API_KEY: ${{ eyJrIjoiazlYOVRuV3ZiUGxrTFZFRHZKNHJuSk9PV0RzMVVlSDEiLCJuIjoiYnV0dG9uLWt5a2xvcyIsImlkIjoxfQ== }}
+        GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}
     - run: npm run release -- patch --ci -VV
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GRAFANA_API_KEY: ${{ eyJrIjoiazlYOVRuV3ZiUGxrTFZFRHZKNHJuSk9PV0RzMVVlSDEiLCJuIjoiYnV0dG9uLWt5a2xvcyIsImlkIjoxfQ== }}
+        GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:
