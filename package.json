@@ -1,0 +1,57 @@
+{
+  "name": "cloudspout-button-panel",
+  "version": "7.0.25",
+  "description": "Panel for a single button",
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "grafana-sign": "node grafana-sign.js",
+    "zip": "node zip.js",
+    "predist": "npm run build",
+    "dist": "npm run sign",
+    "postdist": "npm run zip",
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "release": "release-it",
+    "sign": "npx @grafana/toolkit plugin:sign && git add dist/MANIFEST.txt && git commit -m Sign"
+  },
+  "repository": "github:cloudspout/cloudspout-button-panel",
+  "author": "CloudSpout LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloudspout/cloudspout-button-panel/issues",
+    "email": "info@cloudspout.io"
+  },
+  "devDependencies": {
+    "@grafana/data": "7.4.2",
+    "@grafana/runtime": "^7.4.2",
+    "@grafana/toolkit": "7.4.2",
+    "@grafana/ui": "7.4.2",
+    "@monaco-editor/react": "^3.7.0",
+    "release-it": "^14.4.1",
+    "copy-webpack-plugin": "^6.3.2"
+  },
+  "engines": {
+    "node": ">=12 <13"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "assets": [
+        "cloudspout-button-panel.zip"
+      ]
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": [
+        "npm run dist"
+      ]
+    }
+  },
+  "dependencies": {
+    "archiver": "^5.2.0"
+  }
+}
